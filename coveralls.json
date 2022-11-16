@@ -1,0 +1,23 @@
+{
+  "treat_no_relevant_lines_as_covered": true,
+  "coverage_options": {
+    "output_dir": "priv/static/doc/cover/",
+    "minimum_coverage": 85
+  },
+  "terminal_options": {
+    "file_column_width": 60
+  },
+  "skip_files": [
+    "lib/auth0_backend/application.ex",
+    "lib/auth0_backend/mailer.ex",
+    "lib/auth0_backend/repo.ex",
+    "lib/auth0_backend/schema.ex",
+    "lib/auth0_backend_web.ex",
+    "lib/auth0_backend_web/endpoint.ex",
+    "lib/auth0_backend_web/gettext.ex",
+    "lib/auth0_backend_web/router.ex",
+    "lib/auth0_backend_web/telemetry.ex",
+    "lib/auth0_backend_web/views",
+    "test"
+  ]
+}

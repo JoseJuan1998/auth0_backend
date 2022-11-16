@@ -23,6 +23,7 @@ defmodule Auth0BackendWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import Auth0BackendWeb.ConnCase
+      import Auth0Backend.Factory
 
       alias Auth0BackendWeb.Router.Helpers, as: Routes
 

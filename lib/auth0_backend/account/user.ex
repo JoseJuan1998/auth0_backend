@@ -3,8 +3,6 @@ defmodule Auth0Backend.Account.User do
 
   import Ecto.Changeset
 
-  alias Auth0Backend.Repo
-
   @timestamps_opts [type: :naive_datetime_usec]
   @type t :: %__MODULE__{}
 

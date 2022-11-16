@@ -24,6 +24,7 @@ defmodule Auth0Backend.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Auth0Backend.DataCase
+      import Auth0Backend.Factory
     end
   end
 

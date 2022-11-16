@@ -20,13 +20,13 @@ defmodule Auth0BackendWeb.Auth.Auth do
   end
 
   defp get_token() do
-    body = %{
-      audience: System.get_env("AUTH0_AUDIENCE"),
-      client_id: System.get_env("AUTH0_CLIENT_ID"),
-      client_secret: System.get_env("AUTH0_CLIENT_SECRET"),
-      grant_type: System.get_env("AUTH0_GRANT_TYPE")
-    }
-    |> IO.inspect()
+    body =
+      %{
+        audience: System.get_env("AUTH0_AUDIENCE"),
+        client_id: System.get_env("AUTH0_CLIENT_ID"),
+        client_secret: System.get_env("AUTH0_CLIENT_SECRET"),
+        grant_type: System.get_env("AUTH0_GRANT_TYPE")
+      }
 
     response = Req.post!("https://code-green-house.us.auth0.com/oauth/token", json: body).body
 

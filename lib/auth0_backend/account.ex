@@ -32,8 +32,9 @@ defmodule Auth0Backend.Account do
   end
 
   defp create_auth0_user(%{valid?: true, changes: changes}, user = %User{}) do
-    with {:ok, user_auth0} <- Auth.create_user("#{user.first_name} #{user.last_name}", user.email, changes.password),
-    {:ok, updated_user} <- auth0_id_update(user, %{auth0_id: user_auth0["user_id"]}) do
+    with {:ok, user_auth0} <-
+           Auth.create_user("#{user.first_name} #{user.last_name}", user.email, changes.password),
+         {:ok, updated_user} <- auth0_id_update(user, %{auth0_id: user_auth0["user_id"]}) do
       {:ok, updated_user}
     end
   end
