@@ -10,6 +10,10 @@ import Config
 config :auth0_backend,
   ecto_repos: [Auth0Backend.Repo]
 
+config :auth0_backend, Auth0Backend.Repo,
+  migration_primary_key: [type: :uuid],
+  migration_timestamps: [type: :naive_datetime_usec]
+
 # Configures the endpoint
 config :auth0_backend, Auth0BackendWeb.Endpoint,
   url: [host: "localhost"],

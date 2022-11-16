@@ -21,7 +21,8 @@ config :auth0_backend, Auth0BackendWeb.Endpoint,
   server: false
 
 # In test we don't send emails.
-config :auth0_backend, Auth0Backend.Mailer, adapter: Swoosh.Adapters.Test
+# config :auth0_backend, Auth0Backend.Mailer, adapter: Swoosh.Adapters.Test
+config :auth0_backend, Auth0BackendSystem.Mailer, adapter: Bamboo.TestAdapter
 
 # Print only warnings and errors during test
 config :logger, level: :warn

@@ -10,6 +10,15 @@ defmodule Auth0Backend.MixProject do
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
+      # Excoveralls
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
+      # ---
       deps: deps()
     ]
   end
@@ -49,7 +58,14 @@ defmodule Auth0Backend.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:req, "~> 0.3.1"}
+      {:req, "~> 0.3.1"},
+      {:cors_plug, "~> 3.0"},
+      {:mock, "~> 0.3.7"},
+      {:ex_machina, "~> 2.7"},
+      {:excoveralls, "~> 0.10", only: :test},
+      {:bamboo, "~> 2.2"},
+      {:bamboo_smtp, "~> 4.1"},
+      {:bamboo_phoenix, "~> 1.0.0"}
     ]
   end
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Activate account</title>
+		<style>
+			body{
+				font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+				max-width: 600px;
+			}
+			.social{
+				display: flex;
+				justify-content: center;
+				max-width: 600px;
+			}
+			.social img {
+				width: 30px;
+				margin: 0 5px
+			}
+			.container {
+				padding: 20px;
+				border: 1px solid #f8f7f9;
+				max-width: 600px;
+			}
+			.footer {
+				padding: 20px;
+				padding-bottom: 40px;
+				margin-top: 30px;
+				background: #f8f7f9;
+				display: flex;
+				text-align: center;
+				max-width: 600px;
+			}
+			.content {
+				font-size: 14px;
+				line-height: 40px;
+				margin: auto;
+				max-width: 600px;
+				color: black;
+				line-height: 1.5rem;
+			}
+			.btn-container {text-align: left;}
+			.btn {
+				margin-top: 30px;
+				border: none;
+				background: #26a798;
+				padding: 10px 35px;
+				font-size: 15px;
+				color: white;
+				cursor: pointer;
+			}
+			.header {
+				background: #000;
+				display: flex;
+				justify-content: center;
+				height:75px;
+				align-items: center;
+				padding: 0 10px;
+				margin: auto;
+				max-width: 600px;
+			}
+			.header p {
+							color: #e95d2e;
+							font-family: 'Times New Roman', Times, serif;
+							max-width: 200px;
+							margin: auto;
+							display: flex;
+							font-size: 2rem;
+											position: relative;
+						}
+			small {
+				position: absolute;
+				margin-top: 8px;
+				right: -10px;
+				font-size: 10px
+			}
+			.code {
+				color: #26a798;
+			}
+			a {
+				cursor: pointer;
+				color: #62b4f7;
+			}
+			comment {
+				color: gray;
+				font-style: italic;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+            <div class="header">
+              <p>cordage<small>®</small></p>
+            </div>
+			<div class="content">
+				<h2>Welcome to GreenHouse <%= @user.first_name %></h2>
+
+				<div class = "btn-container">
+					<a href={@url}><button class="btn">Configurar Cuenta</button></a>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+        <div class="content">
+          <div class="social">
+            <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png"/>
+            <img src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Image-1.png"/>
+            <img src="https://www.pngmart.com/files/20/Youtube-Logo-PNG-Transparent-HD-Photo.png"/>
+            <img src="https://img1.freepng.es/20181227/gli/kisspng-logo-linkedin-computer-icons-portable-network-grap-5c25574033c961.6856893615459510402121.jpg"/>
+          </div>
+          <p>
+            1234, Street Rd
+          </p>
+          <p>
+            Suite 1234
+          </p>
+          <p>
+            2022 - Todos los derechos reservados
+          </p>
+          <a href="#">cordage.io</a>
+        </div>
+      </div>
+	</body>
+</html>

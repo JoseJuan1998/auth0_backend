@@ -1,12 +1,12 @@
 defmodule Auth0BackendWeb.Auth.Auth do
-  def create_user(name, email) do
+  def create_user(name, email, password) do
     {:ok, token} = get_token()
 
     body = %{
       name: name,
       email: email,
       connection: "Username-Password-Authentication",
-      password: "CodeGreenHouse@2022",
+      password: password,
       verify_email: true
     }
 
@@ -26,6 +26,7 @@ defmodule Auth0BackendWeb.Auth.Auth do
       client_secret: System.get_env("AUTH0_CLIENT_SECRET"),
       grant_type: System.get_env("AUTH0_GRANT_TYPE")
     }
+    |> IO.inspect()
 
     response = Req.post!("https://code-green-house.us.auth0.com/oauth/token", json: body).body
 

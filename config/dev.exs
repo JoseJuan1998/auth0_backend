@@ -28,6 +28,8 @@ config :auth0_backend, Auth0BackendWeb.Endpoint,
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
+config :auth0_backend, Auth0BackendSystem.Mailer, adapter: Bamboo.LocalAdapter
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

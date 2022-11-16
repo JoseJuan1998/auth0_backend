@@ -31,6 +31,11 @@ defmodule Auth0BackendWeb.Endpoint do
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :auth0_backend
   end
 
+  plug CORSPlug,
+    origin: [
+      "http://localhost:5173"
+    ]
+
   plug Phoenix.LiveDashboard.RequestLogger,
     param_key: "request_logger",
     cookie_key: "request_logger"

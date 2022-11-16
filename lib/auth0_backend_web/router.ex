@@ -21,9 +21,12 @@ defmodule Auth0BackendWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Auth0BackendWeb do
-  #   pipe_through :api
-  # end
+  scope "/api/users", Auth0BackendWeb do
+    pipe_through :api
+
+    post "/", UserController, :create_user
+    post "/confirmation", UserController, :create_password
+  end
 
   # Enables LiveDashboard only for development
   #
@@ -50,7 +53,7 @@ defmodule Auth0BackendWeb.Router do
     scope "/dev" do
       pipe_through :browser
 
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
+      forward "/mailbox", Bamboo.SentEmailViewerPlug
     end
   end
 end
